@@ -6,7 +6,21 @@ spring:
   elasticsearch:
     uris: http://192.168.1.246:9200
 
-# Elasticsearch에 보내는 Query의 로그를 확인할 수 있다.
+# Elasticsearch에 보내는 Query의 로그를 Tomcat 에서 확인할 수 있다.
 logging:
   level:
     org.elasticsearch.client: TRACE
+
+# ApacheTomcat의 Port 번호
+# Tomcat이 동시에 처리할 수 있는 최대 스레드 수 : 200
+# 항상 대기 상태로 유지되는 최소 스페어(여분) 스레드 수 : 10
+# 세션이 만료되기까지의 시간 : 30분
+server:
+  port: 9080
+  tomcat:
+    threads:
+      max: 200
+      min-spare: 10
+  servlet:
+    session:
+      timeout: 30m
