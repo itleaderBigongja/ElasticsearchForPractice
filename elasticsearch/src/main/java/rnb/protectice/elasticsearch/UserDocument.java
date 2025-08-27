@@ -57,4 +57,14 @@ public class UserDocument {
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
     }
+
+    @Override
+    public String toString() {
+        return "UserDocument{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", isActive=" + isActive +
+                '}';
+    }
 }
