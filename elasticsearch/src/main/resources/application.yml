@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: elasticsearch
+
+  # Elasticsearch 연동하기 위한 URL( Elasticsearch 위치 )
+  elasticsearch:
+    uris: http://192.168.1.246:9200
+
+# Elasticsearch에 보내는 Query의 로그를 확인할 수 있다.
+logging:
+  level:
+    org.elasticsearch.client: TRACE
